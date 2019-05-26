@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+<link rel="stylesheet" href="main.css" />
 <title>CALORIE TRACKER</title>
 </head>
 <body>
+<header><h1 id="heading"> Ultimate CalTrack </h1> 
 Welcome to the best calorie tracker available !!
 <br> Are you afraid that you are crossing your daily requirements or are falling short of it ??
-<br>Fret not , You can keep track of all these things here :)<br>
+<br>Fret not , You can keep track of all these things here :)<br><br></header>
+ <div class="container">
+ <section id="left-column">
 First enter your details !<br>
 <br>
- <div class="container=fluid">
- <form id="User Details" >
  <input type="text" id="Name" placeholder="Name" />
  <input type="text" id="Age" placeholder="Age" />
 <input type="text" id="Gender" placeholder="Gender" />
  <button id="Submit" onclick="namePrint()">Submit</button>
  <p id="userdetails"></p>
- </form>
  <br>
- Please enter your daily requirments <br>
- <form id="daily">
- <input id="carbs" placeholder="Carbs" /> Carbs :<p id="rcarbs"></p><br>
-  <input id="fats" placeholder="Fats" /> Fats :<p id="rfats"></p><br>
-   <input id="protein" placeholder="Protein" /> Proteins :<p id="rpro"></p><br>
-   <input id="calorie" placeholder="calorie" /> Calories :<p id="rcal"></p><br>
- </form>
+ Please enter your daily calorie requirments (Kcal) <br>
+   <input id="calorie" placeholder="calorie" />
+   <button id="calsubmit" onclick="calPrint()">Set Calories</button> <p id="rcal">Set Calories : </p><br>
+   <br><br>
+  <img src="file:///C:\Users\Anuj\Desktop\calchart.jpg" id="image"/>
+   </section>
+    
+   <aside id="right-column">
 Now its time to enter what you ate today along with the respective calories,fats,carbs and protein values
 <br>
 PS Approx values will do :)<br><br>
- <div class="card col-md-4 offset-md-2">
-        <div class="memo">
-        <form id="Input Food">
+ 
           <input type="text" placeholder="Enter food item" id="food" required /><br>
           <input type="text" placeholder="Enter the calories (Kcal)" id="cal" required /><br>
           <input id="carbs" placeholder="Enter carbs" required/><br>
           <input id="fats" placeholder="Enter Fats" required/><br>
           <input id="pro" placeholder="Enter Protein" required /><br>
-  
           <br>
-          <button id="add food">
+          <button id="add food" onclick="add()">
             <img
               src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTMgMnY5aDl2MmgtOXY5aC0ydi05aC05di0yaDl2LTloMnptMi0yaC02djloLTl2Nmg5djloNnYtOWg5di02aC05di05eiIvPjwvc3ZnPg=="
             />
-          </button>
-          </form>
-        </div>
-      </div>
-      </div>
+          </button><br><br>
+          The list of items you ate today is : <br><br> Item name ,  Calories , Carbs , Fats , Proteins <br>
+          <ol id="foodlist"></ol>
+      
   <br>
-  Your total calorie intake for today is <p id="total"> </p> 
-  <br><br><p id="Result"></p>
+  Your total calorie intake for today is <p id="total"> </p>
+  <div id="end"><button id="conv" onclick="conversion()"> Click here to see the conversion formula </button><br><br>
+   <ul id="rulelist"></ul>
+  Press the button if you are done adding food items<br>
+  <button id="confirm" onclick="final()">Confirm</button>
+  <br><br>
+  <div><p id="Result"></p></div>
+  </div></aside>
+  </div>
+  <br><br>
+  
 </body>
 <script src="CalTrack.js"></script>
 </html>
