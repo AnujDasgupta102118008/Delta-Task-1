@@ -1,0 +1,48 @@
+#heading {
+	text-align :center;
+	text-weight :bold;
+}
+#confirm{
+	background-color:MediumSeaGreen;
+}
+body{
+	font-size : 20px;
+	background-color:rgb(255,108,81);
+}
+#container{
+	width:100%;
+	margin: 0px auto;
+	background-color:rgb(255,108,81);
+}
+#left-column{
+	width:50%;
+	float:left;
+	background-color:rgb(255,108,81);
+	margin-top:10px;
+}
+#right-column{
+	width:50%;
+	float:right;
+	background-color:rgb(255,108,81);
+		margin-top:10px;
+}
+header{
+	margin : auto;
+	text-align:center;
+}
+#end{
+	text-align:left;
+}
+#image{
+	border:5px solid black;
+	margin-left:25%;
+	
+}
+@media screen and (max-width:640px)
+{
+	#left-column{
+	width:100%;}
+	#right-column{
+	width:100%;}
+}
+
