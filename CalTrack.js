@@ -12,7 +12,7 @@ function namePrint() {
 function calPrint() { 
 	
 	 cal=parseInt(document.getElementById("calorie").value);
-document.getElementById("rcal").innerHTML="Set calories : "+cal;
+document.getElementById("rcal").innerHTML="Set Calories : "+cal;
 	localStorage.setItem("cal",JSON.stringify(cal));
 	}
 
@@ -83,6 +83,21 @@ function init () {
 	        }
 		}    
 }
+function suggestion()
+{
+	var h=document.getElementById("height").value;
+	var w=document.getElementById("weight").value;
+	var a=document.getElementById("age").value;
+	var cg= (864-(9.72 * a) + 1.27*(14.2* w + 503*h));
+	document.getElementById("sugg").innerHTML+=cg;
+	
+	
+	
+	
+	
+	
+	
+	}
 function final() {
 	if(parseInt(kcal)>parseInt(cal))
 		{ alert("You exceeded your daily requirements :((");
