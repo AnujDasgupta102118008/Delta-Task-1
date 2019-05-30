@@ -14,18 +14,20 @@ Welcome to the best calorie tracker available !!
  <section id="left-column">
 First enter your details !<br>
 <br>
- <input type="text" id="Name" placeholder="Name" />
- <input type="number" id="Age" placeholder="Age" />
-<input type="text" id="Gender" placeholder="Gender" />
- <button id="Submit" onclick="namePrint()">Submit</button>
+<form>
+ <input type="text" id="Name" placeholder="Name" required />
+ <input type="number" id="Age" placeholder="Age" required/>
+<input type="text" id="Gender" placeholder="Gender" required/>
+ <button id="Submit" onclick="namePrint()" type="button">Submit</button></form>
  <p id="userdetails"></p>
  <br>
  Enter your Height(m) and Weight(kg) and Age(yrs)<br>
- <input id="height" type="number" placeholder="Height(m)"/>
-  <input id="weight" type="number" placeholder="Weight(kg)"/>
-   <input id="age" type="number" placeholder="Age(yrs)"/>
-  <button id="hw" onclick="suggestion()">Submit</button>
- 
+ <form>
+ <input id="height" type="number" placeholder="Height(m)" required/>
+  <input id="weight" type="number" placeholder="Weight(kg)" required/>
+   <input id="age" type="number" placeholder="Age(yrs)" required/>
+  <button id="hw" onclick="suggestion()" type="button">Submit</button>
+ </form>
  
   <p id="sugg">Your suggested calorie requirement is </p>
   <p> (Moderate level of activeness is considered in this calculation) </p>
@@ -33,7 +35,7 @@ First enter your details !<br>
    <input id="calorie" placeholder="Set calories" />
    <button id="calsubmit" onclick="calPrint()">Set Calories</button> <p id="rcal">Set Calories : </p><br>
    <br><br>
-  <img src="file:///C:\Users\Anuj\Desktop\calchart.jpg" id="image"/>
+  <img src="calchart.jpg" id="image"/>
    </section>
     
    <aside id="right-column">
