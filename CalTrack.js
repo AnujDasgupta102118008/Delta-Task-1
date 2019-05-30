@@ -8,13 +8,15 @@ function namePrint() {
 	document.getElementById("userdetails").innerHTML="Heyy "+name;	
 	localStorage.setItem("name",JSON.stringify(name));
 }
-
+var calo;
 function calPrint() { 
-	
-	 cal=parseInt(document.getElementById("calorie").value);
-document.getElementById("rcal").innerHTML="Set Calories : "+cal;
-	localStorage.setItem("cal",JSON.stringify(cal));
-	}
+     cal=parseInt(document.getElementById("calorie").value);
+	 if(cal)
+{   
+	document.getElementById("rcal").innerHTML="Set Calories : "+cal;
+	localStorage.setItem("cal",JSON.stringify(cal));}
+	 calo=cal;
+}
 
 let kcal =0; let ctr=0;
 var id;
@@ -45,6 +47,8 @@ delbutton.onclick = function() {
   localStorage.removeItem(id);
   localStorage.setItem("kc",JSON.stringify(kcal));
 };
+
+	
 localStorage.setItem("kc",JSON.stringify(kcal));
 entry.appendChild(document.createTextNode(s));
 entry.appendChild(delbutton);
@@ -71,6 +75,7 @@ function init () {
 	var list=document.getElementById("foodlist");
 	 var calmem=localStorage.getItem("kc");
      kcal=JSON.parse(calmem);
+     calo=cr;
 	        for (var i = 0; i <=localStorage.length; i++) {
 	            var key = localStorage.key(i);
 	            if (key.substring(0, 4) == "food") 
@@ -89,28 +94,28 @@ function suggestion()
 	var w=document.getElementById("weight").value;
 	var a=document.getElementById("age").value;
 	var cg= (864-(9.72 * a) + 1.27*(14.2* w + 503*h));
+	if(h&&w&&a)
 	document.getElementById("sugg").innerHTML+=cg;
-	
-	
-	
-	
-	
-	
-	
 	}
 function final() {
-	if(parseInt(kcal)>parseInt(cal))
+	if(calo && kcal){
+	if(parseInt(kcal)>parseInt(calo))
 		{ alert("You exceeded your daily requirements :((");
 		document.getElementById("Result").innerHTML="You exceeded your daily requirements :((";
 		}
-	else if (parseInt(kcal)==parseInt(cal))
+	else if (parseInt(kcal)==parseInt(calo))
 	{ alert("Your intake today is exactly equal to your requirements.\n CONGRATS !!!!!");
 	document.getElementById("Result").innerHTML="Your intake today is exactly equal to your requirements.\n CONGRATS !!!!!";
 	}
 	else
 		{alert("Your intake is falling short of your requirements :(");
+		console.log(kcal);
+		
+		console.log(cal);
 		document.getElementById("Result").innerHTML="Your intake is falling short of your requirements :(";
-		}
+		}}
+	else
+		alert("Incomplete data , pls fill in the required fields");
 }
 var rc=0;
 function conversion(){rc++;
@@ -130,7 +135,28 @@ if(rc==1)
 		rl.appendChild(rule3);
 	}
 }
+document.getElementById("Submit").addEventListener('click',function(event){
+	
+	event.preventDefault();
+	console.log("default");
+});
 
+document.getElementById("add food").addEventListener('click',function(event){
 
+	event.preventDefault();
+	console.log("default");
+});
+
+document.getElementById("calsubmit").addEventListener('click',function(event){
+	
+	event.preventDefault();
+	console.log("default");
+});
+
+document.getElementById("hw").addEventListener('click',function(event){
+	
+	event.preventDefault();
+	console.log("default");
+});
 
 
